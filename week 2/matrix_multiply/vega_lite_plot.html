@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Vega-Lite Plot</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  </head>
+  <body>
+    <div id="vis"></div>
+    <script type="text/javascript">
+      const spec = JSON.parse("{\"$schema\":\"https://vega.github.io/schema/vega-lite/v5.json\",\"title\":{\"text\":\"Matrix Multiplication Running Times\",\"fontSize\":20},\"description\":\"Median running time vs matrix size\",\"width\":800,\"height\":450,\"data\":{\"values\":[{\"Matrix Size\":8,\"Running Time (µs)\":4,\"Algorithm\":\"Triple loop (ijk)\"},{\"Matrix Size\":8,\"Running Time (µs)\":5,\"Algorithm\":\"8-fold recursion\"},{\"Matrix Size\":16,\"Running Time (µs)\":34,\"Algorithm\":\"Triple loop (ijk)\"},{\"Matrix Size\":16,\"Running Time (µs)\":35,\"Algorithm\":\"8-fold recursion\"},{\"Matrix Size\":32,\"Running Time (µs)\":222,\"Algorithm\":\"Triple loop (ijk)\"},{\"Matrix Size\":32,\"Running Time (µs)\":298,\"Algorithm\":\"8-fold recursion\"},{\"Matrix Size\":64,\"Running Time (µs)\":1798,\"Algorithm\":\"Triple loop (ijk)\"},{\"Matrix Size\":64,\"Running Time (µs)\":2192,\"Algorithm\":\"8-fold recursion\"},{\"Matrix Size\":128,\"Running Time (µs)\":13460,\"Algorithm\":\"Triple loop (ijk)\"},{\"Matrix Size\":128,\"Running Time (µs)\":17325,\"Algorithm\":\"8-fold recursion\"},{\"Matrix Size\":256,\"Running Time (µs)\":109162,\"Algorithm\":\"Triple loop (ijk)\"},{\"Matrix Size\":256,\"Running Time (µs)\":138895,\"Algorithm\":\"8-fold recursion\"},{\"Matrix Size\":512,\"Running Time (µs)\":946241,\"Algorithm\":\"Triple loop (ijk)\"},{\"Matrix Size\":512,\"Running Time (µs)\":1199221,\"Algorithm\":\"8-fold recursion\"}]},\"mark\":{\"type\":\"line\",\"point\":true},\"encoding\":{\"x\":{\"field\":\"Matrix Size\",\"type\":\"quantitative\",\"title\":\"Matrix size (n for n×n)\",\"scale\":{\"type\":\"log\"},\"axis\":{\"titleFontSize\":16,\"labelFontSize\":14}},\"y\":{\"field\":\"Running Time (µs)\",\"type\":\"quantitative\",\"title\":\"Median running time (µs)\",\"scale\":{\"type\":\"log\"},\"axis\":{\"titleFontSize\":16,\"labelFontSize\":14}},\"color\":{\"field\":\"Algorithm\",\"type\":\"nominal\",\"title\":\"Algorithm\",\"legend\":{\"titleFontSize\":16,\"labelFontSize\":14}},\"tooltip\":[{\"field\":\"Matrix Size\",\"type\":\"quantitative\"},{\"field\":\"Running Time (µs)\",\"type\":\"quantitative\"},{\"field\":\"Algorithm\",\"type\":\"nominal\"}]}}");
+      vegaEmbed('#vis', spec);
+    </script>
+  </body>
+</html>

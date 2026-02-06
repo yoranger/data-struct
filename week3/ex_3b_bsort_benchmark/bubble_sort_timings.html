@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vega-Lite Plot</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+    <div id="vis"></div>
+    <script type="text/javascript">
+        const spec = {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "background": null,
+    "data": {
+        "values": [
+            {
+                "Algorithm": "Typ.T",
+                "Array Size": 400,
+                "Running Time": 672859
+            },
+            {
+                "Algorithm": "Max.T",
+                "Array Size": 400,
+                "Running Time": 799093
+            },
+            {
+                "Algorithm": "Min.T",
+                "Array Size": 800,
+                "Running Time": 1031
+            },
+            {
+                "Algorithm": "Typ.T",
+                "Array Size": 800,
+                "Running Time": 2637937
+            },
+            {
+                "Algorithm": "Max.T",
+                "Array Size": 800,
+                "Running Time": 3083875
+            },
+            {
+                "Algorithm": "Min.T",
+                "Array Size": 1600,
+                "Running Time": 2812
+            },
+            {
+                "Algorithm": "Typ.T",
+                "Array Size": 1600,
+                "Running Time": 11601937
+            },
+            {
+                "Algorithm": "Max.T",
+                "Array Size": 1600,
+                "Running Time": 13254687
+            },
+            {
+                "Algorithm": "Min.T",
+                "Array Size": 3200,
+                "Running Time": 5875
+            },
+            {
+                "Algorithm": "Typ.T",
+                "Array Size": 3200,
+                "Running Time": 48072375
+            },
+            {
+                "Algorithm": "Max.T",
+                "Array Size": 3200,
+                "Running Time": 53059500
+            },
+            {
+                "Algorithm": "Min.T",
+                "Array Size": 6400,
+                "Running Time": 11500
+            },
+            {
+                "Algorithm": "Typ.T",
+                "Array Size": 6400,
+                "Running Time": 190775250
+            },
+            {
+                "Algorithm": "Max.T",
+                "Array Size": 6400,
+                "Running Time": 208331250
+            },
+            {
+                "Algorithm": "Min.T",
+                "Array Size": 12800,
+                "Running Time": 26500
+            },
+            {
+                "Algorithm": "Max.T",
+                "Array Size": 12800,
+                "Running Time": 816836500
+            },
+            {
+                "Algorithm": "Min.T",
+                "Array Size": 25600,
+                "Running Time": 46000
+            },
+            {
+                "Algorithm": "Typ.T",
+                "Array Size": 25600,
+                "Running Time": 3007773000
+            },
+            {
+                "Algorithm": "Max.T",
+                "Array Size": 25600,
+                "Running Time": 3283038000
+            }
+        ]
+    },
+    "description": "Running Time Comparison of Sorting Algorithms",
+    "encoding": {
+        "color": {
+            "field": "Algorithm",
+            "sort": [
+                "Naive MatMul",
+                "Div&Conq MatMul"
+            ],
+            "type": "nominal"
+        },
+        "tooltip": [
+            {
+                "field": "Array Size",
+                "title": "Array Size",
+                "type": "quantitative"
+            },
+            {
+                "field": "Running Time",
+                "title": "Running Time (ms)",
+                "type": "quantitative"
+            }
+        ],
+        "x": {
+            "axis": {
+                "title": "Array Size (log scale)"
+            },
+            "field": "Array Size",
+            "scale": {
+                "type": "log"
+            },
+            "type": "quantitative"
+        },
+        "y": {
+            "axis": {
+                "title": "Running Time (ms, log scale)"
+            },
+            "field": "Running Time",
+            "scale": {
+                "type": "log"
+            },
+            "type": "quantitative"
+        }
+    },
+    "height": 360,
+    "mark": {
+        "point": true,
+        "type": "line"
+    },
+    "width": 480
+};
+        vegaEmbed('#vis', spec).catch(console.error);
+    </script>
+</body>
+</html>
