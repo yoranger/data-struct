@@ -129,7 +129,22 @@ void BSTree::deleteNode(double k) {
 
 void BSTree::deleteNode(Node *node) 
 {
-  
+  if(!node->left)
+      transplant(node, node->right);
+  else if(!node->right)
+    transplant(node, node->left);
+  else {
+    Node *y = findMin(node->right);
+    if(y->parent != node) {
+      transplant(y, y->right);
+      y->right = node->right;
+      y->right->parent = y;
+    }
+    transplant(node, y);
+    y->left = node->left;
+    y->left->parent = y;
+  }
+  delete node;
 }
 
 void BSTree::transplant(Node *u, Node *v) 
