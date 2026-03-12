@@ -10,47 +10,45 @@ std::map<std::string, int> dijkstra(const std::map<std::string, std::vector<Edge
 
     std::map<std::string, int> distances;
     std::map<std::string, bool> visited;
-    std::priority_queue<std::pair<int, std::string>,
-    std::vector<std::pair<int, std::string>>,
-    std::greater<std::pair<int, std::string>>> pq;
+    std::priority_queue<std::pair<int, std::string>, std::vector<std::pair<int, std::string>>, std::greater<std::pair<int, std::string>>> pq;
 
     //#TODO:init
     for (const auto& pair : graph) {
-        distances[XXXXXXXX]= X;
-        visited[XXXXXXXXXX] = false;
-        predecessors[XXXXXXXXX] = "";
+        distances[pair.first]= INT_MAX;
+        visited[pair.first] = false;
+        predecessors[pair.first] = "";
     }
 
-    distances[XXXXXXX] = 0;
-    pq.push({0, XXXXXXXX});
+    distances[start] = 0;
+    pq.push({0, start});
 
     while (!pq.empty()) {
         
         std::string current = pq.top().second;
         pq.pop();
 
-        if (visited[XXXXXX]) {
+        if (visited[current]) {
             continue;
         }
   
-       ________________ = true;
+       visited[current] = true;
 
         if (graph.find(current) != graph.end()) {
             for (const auto& edge : graph.at(current)) {
 
                 // Check for negative edge weights
-                if (edge.weight < XXXX) {
+                if (edge.weight < 0) {
                     // TODO:
                     // Return an empty map to signal an error
                     //
-                    return _____________;
+                    return std::map<std::string, int>{};
                 }
 
-                if (distances[current] != _______________ + edge.weight < distances[_______]) {
+                if (distances[current] + edge.weight < distances[edge.to]) {
                     //TODO:
-                    __________________________________
-                    ___________________________________;
-                    ___________________________________;
+                    distances[edge.to] = distances[current] + edge.weight;
+                    predecessors[edge.to] = current;
+                    pq.emplace(distances[edge.to], edge.to);
                 }
             }
         }
