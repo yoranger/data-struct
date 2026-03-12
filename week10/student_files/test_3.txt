@@ -1,0 +1,23 @@
+# Textbook Example 22.1
+
+s
+
+# Edges from s
+s t 6
+s y 7
+
+# Edges from t
+t x 6
+t z -4
+t y 8
+
+# Edges from x
+x t -2
+
+# Edges from y
+y x -3
+y z 9
+
+# Edges from z
+z x 7
+z s 2

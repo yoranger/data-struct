@@ -1,0 +1,23 @@
+# Another valid graph test file
+
+S
+
+# Edges from S
+S A 4
+S B 2
+
+# Edges from A
+A C 1
+A D 5
+
+# Edges from B
+B D 3
+
+# Edges from C
+C E 4
+
+# Edges from D
+D E 1
+
+# Edges from E
+E S 2

@@ -1,0 +1,33 @@
+# This is a test file for Dijkstra's algorithm.
+# It uses one edge per line.
+# Starting vertex is 's'.
+#s t 10, s y 5
+#t x 1, t y 2
+#x z 4
+#y t 3, y x 9, y z 2
+#z s 6, z x 7
+
+s
+
+# Edges from 's'
+s t 10  # Edge from s to t with weight 10
+s y 5   # Edge from s to y with weight 5
+# s t -10  # Edge from s to t with weight 10 # introduce a negative weighted edge, should not work , for testing.
+
+# Edges from 't'
+t x 1   # Edge from t to x with weight 1
+t y 2   # Edge from t to y with weight 2
+
+# Edges from 'x'
+x z 4   # Edge from x to z with weight 4
+
+# Edges from 'y'
+y t 3   # Edge from y to t with weight 3
+y x 9   # Edge from y to x with weight 9
+y z 2   # Edge from y to z with weight 2
+
+# Edges from 'z'
+z s 6   # Edge from z to s with weight 6
+z x 7   # Edge from z to x with weight 7
+
+

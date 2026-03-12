@@ -1,0 +1,13 @@
+# Simple valid graph test file
+
+A
+
+# Edges from A
+A B 10
+#A C 5
+
+# Edges from B
+B C 1
+
+# Edges from C
+C B 2
